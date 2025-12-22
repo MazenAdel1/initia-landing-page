@@ -60,8 +60,90 @@ const LandingPage = () => {
         </div>
       </section>
 
+      {/* Pricing Section, always free open-source, see the source code on GitHub */}
+      <section
+        className="py-24 relative overflow-hidden bg-[#1E4C9D]"
+        id="pricing"
+      >
+        {/* subtle background glow */}
+        <div className="absolute inset-0 opacity-30">
+          <div className="absolute -top-24 -left-24 w-96 h-96 rounded-full bg-[#3A7DFF] blur-3xl" />
+          <div className="absolute -bottom-24 -right-24 w-96 h-96 rounded-full bg-white blur-3xl" />
+        </div>
+
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center">
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 text-white border border-white/15">
+              <span className="text-sm text-white/80">
+                {t("pricing.headline")}
+              </span>
+            </div>
+
+            <h2 className="mt-6 text-4xl sm:text-5xl font-black text-white">
+              {t("pricing.title")}
+            </h2>
+
+            <p className="mt-4 text-white/80 max-w-2xl mx-auto text-lg">
+              {t("pricing.subtitle")}
+            </p>
+          </div>
+
+          <div className="mt-12 max-w-3xl mx-auto">
+            <div className="rounded-3xl border border-white/15 bg-white/10 backdrop-blur-xl shadow-2xl p-8 sm:p-10">
+              <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-6">
+                <div>
+                  <div className="text-3xl font-extrabold text-white">
+                    {t("pricing.headline")}
+                  </div>
+
+                  <ul className="mt-6 space-y-3 text-white/85">
+                    <li className="flex gap-3">
+                      <span className="mt-1.5 w-2 h-2 rounded-full bg-[#3A7DFF]" />
+                      <span>{t("pricing.bullets.b1")}</span>
+                    </li>
+                    <li className="flex gap-3">
+                      <span className="mt-1.5 w-2 h-2 rounded-full bg-[#3A7DFF]" />
+                      <span>{t("pricing.bullets.b2")}</span>
+                    </li>
+                    <li className="flex gap-3">
+                      <span className="mt-1.5 w-2 h-2 rounded-full bg-[#3A7DFF]" />
+                      <span>{t("pricing.bullets.b3")}</span>
+                    </li>
+                  </ul>
+
+                  <p className="mt-6 text-sm text-white/70">
+                    {t("pricing.finePrint")}
+                    <span className="ml-2 text-white/60">
+                      {t("pricing.licenseNote")}
+                    </span>
+                  </p>
+                </div>
+
+                <div className="flex flex-col gap-3 sm:min-w-[220px]">
+                  <Link
+                    to="/generate"
+                    className="inline-flex items-center justify-center rounded-2xl px-5 py-3 font-semibold bg-white text-[#1E4C9D] hover:opacity-95 transition"
+                  >
+                    {t("pricing.primaryCta")}
+                  </Link>
+
+                  <a
+                    href="https://github.com/baseflow-labs"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center justify-center rounded-2xl px-5 py-3 font-semibold border border-white/25 text-white hover:bg-white/10 transition"
+                  >
+                    {t("pricing.secondaryCta")}
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* For Whom Section */}
-      <section className="py-24">
+      <section className="py-24" id="who-is-it-for">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-20 items-center">
             <div>

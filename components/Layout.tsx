@@ -1,14 +1,14 @@
+import { Github, Menu, X } from "lucide-react";
 import React from "react";
-import { Link, useLocation } from "react-router-dom";
 import { useTranslation } from "react-i18next";
-import { LOGO, COLORS } from "../constants";
-import { Menu, X, Github } from "lucide-react";
+import { Link } from "react-router-dom";
+
+import { LOGO } from "../constants";
 import { LanguageSwitcher } from "./LanguageSwitcher";
 
 export const Header: React.FC = () => {
   const { t } = useTranslation();
   const [isOpen, setIsOpen] = React.useState(false);
-  const location = useLocation();
 
   return (
     <nav className="sticky top-0 z-50 bg-white border-b border-gray-100">
@@ -19,12 +19,24 @@ export const Header: React.FC = () => {
           </Link>
 
           <div className="hidden md:flex space-x-8 items-center">
-            <Link
-              to="/#how-it-works"
+            <a
+              href="/#how-it-works"
               className="text-gray-600 hover:text-[#1E4C9D] font-medium transition-colors"
             >
-              {t("header.howItWorks")}
-            </Link>
+              {t("footer.howItWorks")}
+            </a>
+            <a
+              href="/#pricing"
+              className="text-gray-600 hover:text-[#1E4C9D] font-medium transition-colors"
+            >
+              {t("footer.pricing")}
+            </a>
+            <a
+              href="/#who-is-it-for"
+              className="text-gray-600 hover:text-[#1E4C9D] font-medium transition-colors"
+            >
+              {t("footer.whoIsItFor")}
+            </a>
             <Link
               to="/auth?mode=login"
               className="text-gray-600 hover:text-[#1E4C9D] font-medium transition-colors"
@@ -92,41 +104,46 @@ export const Footer: React.FC = () => {
             </h4>
             <ul className="space-y-4 text-sm text-gray-600">
               <li>
-                <a href="#" className="hover:text-[#1E4C9D]">
-                  {t("footer.features")}
+                <a href="#how-it-works" className="hover:text-[#1E4C9D]">
+                  {t("footer.howItWorks")}
                 </a>
               </li>
               <li>
-                <a href="#" className="hover:text-[#1E4C9D]">
+                <a href="#pricing" className="hover:text-[#1E4C9D]">
                   {t("footer.pricing")}
                 </a>
               </li>
               <li>
-                <a href="#" className="hover:text-[#1E4C9D]">
-                  {t("footer.changelog")}
+                <a href="#who-is-it-for" className="hover:text-[#1E4C9D]">
+                  {t("footer.whoIsItFor")}
                 </a>
               </li>
             </ul>
           </div>
           <div>
             <h4 className="font-bold text-gray-900 mb-6">
-              {t("footer.company")}
+              {t("footer.about")}
             </h4>
             <ul className="space-y-4 text-sm text-gray-600">
               <li>
-                <a href="#" className="hover:text-[#1E4C9D]">
-                  {t("footer.about")}
+                <a
+                  href="https://github.com/baseflow-labs/initia-frontend-template/blob/main/LICENSE"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-[#1E4C9D]"
+                >
+                  {t("footer.license")}
                 </a>
               </li>
               <li>
-                <a href="#" className="hover:text-[#1E4C9D]">
+                <Link to="/privacy" className="hover:text-[#1E4C9D]">
                   {t("footer.privacy")}
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#" className="hover:text-[#1E4C9D]">
+                <Link to="/terms" className="hover:text-[#1E4C9D]">
                   {t("footer.terms")}
-                </a>
+                </Link>
               </li>
             </ul>
           </div>
@@ -135,14 +152,21 @@ export const Footer: React.FC = () => {
               {t("footer.connect")}
             </h4>
             <div className="flex space-x-4">
-              <a href="#" className="text-gray-600 hover:text-[#1E4C9D]">
+              <a
+                href="https://github.com/baseflow-labs"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-gray-600 hover:text-[#1E4C9D]"
+              >
                 <Github size={20} />
               </a>
             </div>
           </div>
         </div>
         <div className="border-t border-gray-300 pt-8 flex flex-col md:flex-row justify-between items-center text-sm text-gray-500">
-          <p>{t("footer.copyright")}</p>
+          <p>
+            © {new Date().getFullYear()} {t("footer.copyright")}
+          </p>
           <p className="mt-4 md:mt-0">{t("footer.tagline")}</p>
         </div>
       </div>

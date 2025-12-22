@@ -1,13 +1,5 @@
 import React from "react";
 
-export const COLORS = {
-  primary: "#1E4C9D",
-  secondaryBg: "#DFE5EA",
-  accent: "#3A7DFF",
-  text: "#1F2937",
-  muted: "#6B7280",
-};
-
 export const LOGO = (className?: string) => (
   <svg
     viewBox="0 0 400 120"

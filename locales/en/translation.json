@@ -24,16 +24,18 @@
   "footer": {
     "about": "About",
     "changelog": "Changelog",
-    "company": "Company",
     "connect": "Connect",
-    "copyright": "© 2024 Initia. All rights reserved.",
+    "copyright": "Initia. All rights reserved.",
     "description": "The intelligent app engine that transforms your thoughts into production-ready source code.",
     "features": "Features",
+    "howItWorks": "How it works",
+    "license": "License",
     "pricing": "Pricing",
     "privacy": "Privacy Policy",
     "product": "Product",
     "tagline": "Built with precision for developers world-wide.",
-    "terms": "Terms of Service"
+    "terms": "Terms of Service",
+    "whoIsItFor": "Who is it for"
   },
   "forWhom": {
     "indieDevelopers": {
@@ -59,7 +61,7 @@
   "hero": {
     "badge": "Engine v2.0 is now live",
     "cta": "Generate Your App",
-    "headline": "From idea to full-stack app — instantly.",
+    "headline": "Full-Stack App — Now.",
     "placeholder": "e.g., A task management app with teams, nested tasks, and file attachments...",
     "quickTemplates": "Quick templates:",
     "secondary": "View Example",
@@ -88,6 +90,19 @@
     },
     "subtitle": "Four steps to launch. No boilerplate, just production code.",
     "title": "How It Works"
+  },
+  "pricing": {
+    "bullets": {
+      "b1": "Generate full-stack CRUD from your schema",
+      "b2": "Download source code and keep it forever",
+      "b3": "Self-host anytime — your infrastructure, your rules"
+    },
+    "finePrint": "No credit card required.",
+    "headline": "Completely Free. No lock-in.",
+    "primaryCta": "Start Generating",
+    "secondaryCta": "View on GitHub",
+    "subtitle": "Initia is open-source and free to use. Generate code, download it, and own it.",
+    "title": "Free Forever"
   },
   "privacy": {
     "badge": "Privacy first",

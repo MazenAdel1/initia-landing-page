@@ -1,9 +1,3 @@
-import React from "react";
-import { useNavigate, useSearchParams } from "react-router-dom";
-import { useTranslation } from "react-i18next";
-import { WizardStep, AppSchema, ProjectMetadata } from "../types";
-import { SchemaVisualizer } from "./SchemaVisualizer";
-import { generateSchemaFromPrompt } from "../services/geminiService";
 import {
   ArrowRight,
   Check,
@@ -11,11 +5,14 @@ import {
   Download,
   Layout,
   Loader2,
-  Server,
   Settings,
   User,
 } from "lucide-react";
-import { COLORS } from "../constants";
+import React from "react";
+import { useTranslation } from "react-i18next";
+import { useNavigate, useSearchParams } from "react-router-dom";
+import { AppSchema, ProjectMetadata, WizardStep } from "../types";
+import { SchemaVisualizer } from "./SchemaVisualizer";
 
 const STEPS = [
   { id: WizardStep.DESCRIPTION, key: "wizard.steps.prompt", icon: Code },
@@ -438,7 +435,7 @@ export const Wizard: React.FC = () => {
           return (
             <div
               key={step.id}
-              className="flex flex-col items-center gap-3 relative bg-white px-4"
+              className="flex flex-col items-center gap-3 relative px-4"
             >
               <div
                 className={`
@@ -491,7 +488,18 @@ export const Wizard: React.FC = () => {
           <div className="px-12 py-6 bg-gray-50 border-t border-gray-100 flex justify-end">
             <button
               onClick={handleNext}
-              disabled={currentStep === WizardStep.DESCRIPTION && !prompt}
+              disabled={
+                (currentStep === WizardStep.DESCRIPTION && !prompt) ||
+                (currentStep === WizardStep.METADATA &&
+                  (!metadata.name ||
+                    !metadata.description ||
+                    !metadata.sector ||
+                    !metadata.country ||
+                    !metadata.frontend ||
+                    !metadata.backend ||
+                    !metadata.db ||
+                    !metadata.language))
+              }
               className="flex items-center gap-2 px-10 py-4 bg-[#3A7DFF] text-white font-black rounded-xl hover:bg-blue-600 transition-all shadow-lg hover:shadow-blue-200 disabled:opacity-50 disabled:cursor-not-allowed active:scale-95"
             >
               {currentStep === WizardStep.AUTH
