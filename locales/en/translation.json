@@ -207,6 +207,71 @@
     "primaryKey": "PK",
     "table": "Table"
   },
+  "terms": {
+    "badge": "Terms of Service",
+    "contact": {
+      "emailLabel": "Email:",
+      "emailValue": "SuhaibAhmadAi@hotmail.com"
+    },
+    "disclaimer": "This Terms of Service document is provided for informational purposes and does not constitute legal advice.",
+    "lastUpdated": "Last updated:",
+    "sections": {
+      "acceptance": {
+        "text": "By accessing or using Initia, you agree to be bound by these Terms of Service. If you do not agree, you may not use the service.",
+        "title": "Acceptance of Terms"
+      },
+      "accounts": {
+        "text": "Some features require creating an account or signing in using third-party authentication providers such as Google. You are responsible for maintaining the security of your account.",
+        "title": "Accounts & Authentication"
+      },
+      "availability": {
+        "text": "The service is provided on an \"as is\" and \"as available\" basis. We may modify, suspend, or discontinue parts of the service at any time.",
+        "title": "Service Availability"
+      },
+      "changes": {
+        "text": "We may update these Terms from time to time. Continued use of the service after changes indicates acceptance of the updated Terms.",
+        "title": "Changes to These Terms"
+      },
+      "contact": {
+        "text": "If you have questions about these Terms, please contact us.",
+        "title": "Contact"
+      },
+      "disclaimer": {
+        "text": "Initia is provided without warranties of any kind. We do not guarantee that generated code is error-free, secure, or fit for a particular purpose.",
+        "title": "Disclaimer of Warranties"
+      },
+      "generatedCode": {
+        "text": "You retain ownership of the source code generated for you. Initia does not claim ownership over your generated projects.",
+        "title": "Generated Code Ownership"
+      },
+      "governingLaw": {
+        "text": "These Terms are governed by and interpreted in accordance with the laws of the Hashemite Kingdom of Jordan.",
+        "title": "Governing Law"
+      },
+      "limitation": {
+        "text": "To the maximum extent permitted by law, Initia and its maintainers shall not be liable for any damages arising from your use of the service or generated code.",
+        "title": "Limitation of Liability"
+      },
+      "openSource": {
+        "text": "Initia is provided as an open-source project. The platform itself and generated output may be governed by open-source licenses specified in the repository or generated files.",
+        "title": "Open-Source Nature"
+      },
+      "service": {
+        "text": "Initia is a free, open-source platform that generates full-stack application code based on user input. The service includes schema visualization, project configuration, and downloadable source code.",
+        "title": "The Service"
+      },
+      "termination": {
+        "text": "We may suspend or terminate access to the service if these Terms are violated or if continued operation becomes impractical.",
+        "title": "Termination"
+      },
+      "usage": {
+        "text": "You agree not to misuse the service, interfere with its operation, attempt unauthorized access, or use Initia for unlawful or harmful purposes.",
+        "title": "Acceptable Use"
+      }
+    },
+    "subtitle": "These Terms govern your access to and use of Initia and its services.",
+    "title": "Terms of Service"
+  },
   "wizard": {
     "auth": {
       "createAccount": "Create an Account",

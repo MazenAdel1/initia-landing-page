@@ -520,9 +520,113 @@ const PrivacyPolicyPage = () => {
   );
 };
 
+// app/terms/page.tsx  (Next.js App Router)
+// or src/pages/terms.tsx
+
 const TermsOfServicePage = () => {
-  return <div className="p-20">Terms of Service Page (To be implemented)</div>;
+  const { t } = useTranslation();
+  const lastUpdated = "2025-12-22";
+
+  return (
+    <main className="min-h-screen bg-white">
+      <section className="border-b bg-[#DFE5EA]/40">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+          <div className="inline-flex items-center gap-2 rounded-full bg-white border px-4 py-2 text-sm">
+            <span className="h-2 w-2 rounded-full bg-[#3A7DFF]" />
+            <span className="text-gray-700">{t("terms.badge")}</span>
+          </div>
+
+          <h1 className="mt-6 text-4xl sm:text-5xl font-black text-[#1E4C9D]">
+            {t("terms.title")}
+          </h1>
+
+          <p className="mt-4 text-gray-700 text-lg">{t("terms.subtitle")}</p>
+
+          <p className="mt-3 text-sm text-gray-500">
+            {t("terms.lastUpdated")}{" "}
+            <span className="font-medium text-gray-700">{lastUpdated}</span>
+          </p>
+        </div>
+      </section>
+
+      <section className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12 space-y-10">
+        <Section
+          title={t("terms.sections.acceptance.title")}
+          text={t("terms.sections.acceptance.text")}
+        />
+        <Section
+          title={t("terms.sections.service.title")}
+          text={t("terms.sections.service.text")}
+        />
+        <Section
+          title={t("terms.sections.accounts.title")}
+          text={t("terms.sections.accounts.text")}
+        />
+        <Section
+          title={t("terms.sections.openSource.title")}
+          text={t("terms.sections.openSource.text")}
+        />
+        <Section
+          title={t("terms.sections.usage.title")}
+          text={t("terms.sections.usage.text")}
+        />
+        <Section
+          title={t("terms.sections.generatedCode.title")}
+          text={t("terms.sections.generatedCode.text")}
+        />
+        <Section
+          title={t("terms.sections.availability.title")}
+          text={t("terms.sections.availability.text")}
+        />
+        <Section
+          title={t("terms.sections.disclaimer.title")}
+          text={t("terms.sections.disclaimer.text")}
+        />
+        <Section
+          title={t("terms.sections.limitation.title")}
+          text={t("terms.sections.limitation.text")}
+        />
+        <Section
+          title={t("terms.sections.termination.title")}
+          text={t("terms.sections.termination.text")}
+        />
+        <Section
+          title={t("terms.sections.changes.title")}
+          text={t("terms.sections.changes.text")}
+        />
+        <Section
+          title={t("terms.sections.governingLaw.title")}
+          text={t("terms.sections.governingLaw.text")}
+        />
+
+        <div className="rounded-2xl border bg-[#1E4C9D] px-6 py-8 text-white">
+          <h2 className="text-2xl font-extrabold">
+            {t("terms.sections.contact.title")}
+          </h2>
+          <p className="mt-3 text-white/90">
+            {t("terms.sections.contact.text")}
+          </p>
+
+          <div className="mt-4 text-sm">
+            <strong>{t("terms.contact.emailLabel")}</strong>{" "}
+            {t("terms.contact.emailValue")}
+          </div>
+        </div>
+
+        <p className="text-xs text-gray-500">{t("terms.disclaimer")}</p>
+      </section>
+    </main>
+  );
 };
+
+function Section({ title, text }: { title: string; text: string }) {
+  return (
+    <div className="rounded-2xl border bg-white shadow-sm p-6 sm:p-8">
+      <h2 className="text-2xl font-extrabold text-gray-900">{title}</h2>
+      <p className="mt-3 text-gray-700 leading-relaxed">{text}</p>
+    </div>
+  );
+}
 
 const App: React.FC = () => {
   useRTL();
