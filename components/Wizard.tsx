@@ -55,7 +55,40 @@ export const Wizard: React.FC = () => {
       if (!prompt) return;
       setLoading(true);
       try {
-        const generated = await generateSchemaFromPrompt(prompt);
+        // const generated = await generateSchemaFromPrompt(prompt);
+        const generated: AppSchema = {
+          tables: [
+            {
+              id: "1",
+              name: "users",
+              fields: [
+                { name: "id", type: "uuid", isPrimary: true },
+                { name: "email", type: "string" },
+                { name: "password", type: "string" },
+              ],
+              position: { x: 100, y: 100 },
+            },
+            {
+              id: "2",
+              name: "posts",
+              fields: [
+                { name: "id", type: "uuid", isPrimary: true },
+                { name: "user_id", type: "uuid" },
+                { name: "content", type: "text" },
+              ],
+              position: { x: 500, y: 100 },
+            },
+          ],
+          relations: [
+            {
+              fromTable: "2",
+              fromField: "user_id",
+              toTable: "1",
+              toField: "id",
+              type: "one-to-many",
+            },
+          ],
+        };
         setSchema(generated);
         setCurrentStep(WizardStep.SCHEMA);
       } catch (e) {

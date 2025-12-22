@@ -20,16 +20,10 @@ export const Header: React.FC = () => {
 
           <div className="hidden md:flex space-x-8 items-center">
             <Link
-              to="/"
+              to="/#how-it-works"
               className="text-gray-600 hover:text-[#1E4C9D] font-medium transition-colors"
             >
               {t("header.howItWorks")}
-            </Link>
-            <Link
-              to="/"
-              className="text-gray-600 hover:text-[#1E4C9D] font-medium transition-colors"
-            >
-              {t("header.examples")}
             </Link>
             <Link
               to="/auth?mode=login"

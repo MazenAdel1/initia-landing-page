@@ -2,20 +2,19 @@ import {
   CheckCircle2,
   ChevronRight,
   Code,
-  Github,
   Layers,
   Shield,
   Users,
   Zap,
 } from "lucide-react";
 import React from "react";
-import { Link, Route, HashRouter as Router, Routes } from "react-router-dom";
 import { useTranslation } from "react-i18next";
+import { Link, Route, BrowserRouter as Router, Routes } from "react-router-dom";
 
 import { Hero } from "./components/Hero";
 import { Layout } from "./components/Layout";
 import { Wizard } from "./components/Wizard";
-import { I18N } from "./constants";
+import { useRTL } from "./hooks/useRTL";
 
 const LandingPage = () => {
   const { t } = useTranslation();
@@ -24,7 +23,7 @@ const LandingPage = () => {
       <Hero />
 
       {/* How it Works Section */}
-      <section className="py-24 bg-[#DFE5EA]/30">
+      <section className="py-24 bg-[#DFE5EA]/30" id="how-it-works">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-20">
             <h2 className="text-4xl font-black text-[#1E4C9D] mb-4">
@@ -41,19 +40,19 @@ const LandingPage = () => {
                 className="bg-white p-8 rounded-2xl border border-gray-100 shadow-sm relative hover:shadow-xl transition-shadow group"
               >
                 <div className="text-4xl font-black text-[#3A7DFF]/10 absolute top-4 right-4 group-hover:text-[#3A7DFF]/20 transition-colors">
-                  0{idx + 1}
+                  0{idx}
                 </div>
                 <div className="w-12 h-12 bg-blue-50 rounded-xl flex items-center justify-center text-[#3A7DFF] mb-6">
-                  {idx === 0 && <Code size={24} />}
-                  {idx === 1 && <Layers size={24} />}
-                  {idx === 2 && <Zap size={24} />}
-                  {idx === 3 && <CheckCircle2 size={24} />}
+                  {idx === 1 && <Code size={24} />}
+                  {idx === 2 && <Layers size={24} />}
+                  {idx === 3 && <Zap size={24} />}
+                  {idx === 4 && <CheckCircle2 size={24} />}
                 </div>
                 <h3 className="text-xl font-bold text-gray-900 mb-3">
-                  {t(`howItWorks.steps.step${idx + 1}.title`)}
+                  {t(`howItWorks.steps.step${idx}.title`)}
                 </h3>
                 <p className="text-gray-600 leading-relaxed text-sm">
-                  {t(`howItWorks.steps.step${idx + 1}.description`)}
+                  {t(`howItWorks.steps.step${idx}.description`)}
                 </p>
               </div>
             ))}
@@ -260,6 +259,8 @@ const AuthPage = () => {
 };
 
 const App: React.FC = () => {
+  useRTL();
+
   // Initialization for Analytics (Placeholders)
   React.useEffect(() => {
     // Analytics & Clarity init would go here
