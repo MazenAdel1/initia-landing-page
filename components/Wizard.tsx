@@ -39,7 +39,8 @@ export const Wizard: React.FC = () => {
   const [metadata, setMetadata] = React.useState<ProjectMetadata>({
     name: "My Awesome App",
     type: "Web App",
-    stack: "Next.js",
+    frontend: "React.js",
+    backend: "Nest.js",
     db: "PostgreSQL",
     language: "TypeScript",
   });
@@ -59,7 +60,7 @@ export const Wizard: React.FC = () => {
         const generated: AppSchema = {
           tables: [
             {
-              id: "1",
+              id: "users",
               name: "users",
               fields: [
                 { name: "id", type: "uuid", isPrimary: true },
@@ -69,7 +70,7 @@ export const Wizard: React.FC = () => {
               position: { x: 100, y: 100 },
             },
             {
-              id: "2",
+              id: "posts",
               name: "posts",
               fields: [
                 { name: "id", type: "uuid", isPrimary: true },
@@ -78,12 +79,64 @@ export const Wizard: React.FC = () => {
               ],
               position: { x: 500, y: 100 },
             },
+            {
+              id: "comments",
+              name: "comments",
+              fields: [
+                { name: "id", type: "uuid", isPrimary: true },
+                { name: "post_id", type: "uuid" },
+                { name: "user_id", type: "uuid" },
+                { name: "comment", type: "text" },
+              ],
+              position: { x: 300, y: 400 },
+            },
+            {
+              id: "likes",
+              name: "likes",
+              fields: [
+                { name: "id", type: "uuid", isPrimary: true },
+                { name: "post_id", type: "uuid" },
+                { name: "user_id", type: "uuid" },
+              ],
+              position: { x: 700, y: 400 },
+            },
+            {
+              id: "followers",
+              name: "followers",
+              fields: [
+                { name: "id", type: "uuid", isPrimary: true },
+                { name: "follower_id", type: "uuid" },
+                { name: "followed_id", type: "uuid" },
+              ],
+              position: { x: 900, y: 200 },
+            },
           ],
           relations: [
             {
-              fromTable: "2",
+              fromTable: "posts",
               fromField: "user_id",
-              toTable: "1",
+              toTable: "users",
+              toField: "id",
+              type: "one-to-many",
+            },
+            {
+              fromTable: "comments",
+              fromField: "post_id",
+              toTable: "posts",
+              toField: "id",
+              type: "one-to-many",
+            },
+            {
+              fromTable: "followers",
+              fromField: "follower_id",
+              toTable: "users",
+              toField: "id",
+              type: "one-to-many",
+            },
+            {
+              fromTable: "likes",
+              fromField: "post_id",
+              toTable: "posts",
               toField: "id",
               type: "one-to-many",
             },
@@ -157,6 +210,7 @@ export const Wizard: React.FC = () => {
               </h2>
               <p className="text-gray-600">{t("wizard.metadata.subtitle")}</p>
             </div>
+
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div className="space-y-2">
                 <label className="text-sm font-bold text-gray-700 uppercase tracking-wide">
@@ -164,6 +218,7 @@ export const Wizard: React.FC = () => {
                 </label>
                 <input
                   type="text"
+                  required
                   className="w-full p-3 rounded-xl border border-gray-200 focus:border-blue-500 outline-none"
                   value={metadata.name}
                   onChange={(e) =>
@@ -171,22 +226,100 @@ export const Wizard: React.FC = () => {
                   }
                 />
               </div>
+
               <div className="space-y-2">
                 <label className="text-sm font-bold text-gray-700 uppercase tracking-wide">
-                  {t("wizard.metadata.stack")}
+                  {t("wizard.metadata.description")}
+                </label>
+                <input
+                  type="text"
+                  required
+                  className="w-full p-3 rounded-xl border border-gray-200 focus:border-blue-500 outline-none"
+                  value={metadata.description}
+                  onChange={(e) =>
+                    setMetadata({ ...metadata, description: e.target.value })
+                  }
+                />
+              </div>
+
+              <div className="space-y-2">
+                <label className="text-sm font-bold text-gray-700 uppercase tracking-wide">
+                  {t("wizard.metadata.sector")}
+                </label>
+                <select
+                  required
+                  className="w-full p-3 rounded-xl border border-gray-200 focus:border-blue-500 outline-none bg-white"
+                  value={metadata.sector}
+                  onChange={(e) =>
+                    setMetadata({ ...metadata, sector: e.target.value })
+                  }
+                >
+                  <option>Education</option>
+                  <option>E-Commerce</option>
+                  <option>Blog</option>
+                </select>
+              </div>
+
+              <div className="space-y-2">
+                <label className="text-sm font-bold text-gray-700 uppercase tracking-wide">
+                  {t("wizard.metadata.country")}
+                </label>
+                <input
+                  type="text"
+                  required
+                  className="w-full p-3 rounded-xl border border-gray-200 focus:border-blue-500 outline-none"
+                  value={metadata.country}
+                  onChange={(e) =>
+                    setMetadata({ ...metadata, country: e.target.value })
+                  }
+                />
+              </div>
+            </div>
+
+            <div>
+              <h2 className="text-3xl font-bold text-[#1E4C9D]">
+                {t("wizard.metadata.technical.title")}
+              </h2>
+              <p className="text-gray-600">
+                {t("wizard.metadata.technical.subtitle")}
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div className="space-y-2">
+                <label className="text-sm font-bold text-gray-700 uppercase tracking-wide">
+                  {t("wizard.metadata.frontend")}
                 </label>
                 <select
                   className="w-full p-3 rounded-xl border border-gray-200 focus:border-blue-500 outline-none bg-white"
-                  value={metadata.stack}
+                  value={metadata.frontend}
                   onChange={(e) =>
-                    setMetadata({ ...metadata, stack: e.target.value as any })
+                    setMetadata({ ...metadata, frontend: e.target.value })
                   }
                 >
-                  <option>Next.js</option>
-                  <option>Remix</option>
-                  <option>Vite + Express</option>
+                  <option>React.Js</option>
+                  <option>Vue.Js</option>
+                  <option>Angular</option>
                 </select>
               </div>
+
+              <div className="space-y-2">
+                <label className="text-sm font-bold text-gray-700 uppercase tracking-wide">
+                  {t("wizard.metadata.backend")}
+                </label>
+                <select
+                  className="w-full p-3 rounded-xl border border-gray-200 focus:border-blue-500 outline-none bg-white"
+                  value={metadata.backend}
+                  onChange={(e) =>
+                    setMetadata({ ...metadata, backend: e.target.value })
+                  }
+                >
+                  <option>Nest.Js</option>
+                  <option>Laravel</option>
+                  <option>Spring</option>
+                </select>
+              </div>
+
               <div className="space-y-2">
                 <label className="text-sm font-bold text-gray-700 uppercase tracking-wide">
                   {t("wizard.metadata.database")}
@@ -195,7 +328,7 @@ export const Wizard: React.FC = () => {
                   className="w-full p-3 rounded-xl border border-gray-200 focus:border-blue-500 outline-none bg-white"
                   value={metadata.db}
                   onChange={(e) =>
-                    setMetadata({ ...metadata, db: e.target.value as any })
+                    setMetadata({ ...metadata, db: e.target.value })
                   }
                 >
                   <option>PostgreSQL</option>
@@ -204,6 +337,7 @@ export const Wizard: React.FC = () => {
                   <option>MongoDB</option>
                 </select>
               </div>
+
               <div className="space-y-2">
                 <label className="text-sm font-bold text-gray-700 uppercase tracking-wide">
                   {t("wizard.metadata.language")}
@@ -214,7 +348,7 @@ export const Wizard: React.FC = () => {
                   onChange={(e) =>
                     setMetadata({
                       ...metadata,
-                      language: e.target.value as any,
+                      language: e.target.value,
                     })
                   }
                 >

@@ -1,147 +1,155 @@
 {
-  "hero": {
-    "badge": "Engine v2.0 is now live",
-    "headline": "From idea to full-stack app — instantly.",
-    "subtext": "Design your database, pick your stack, and download high-quality source code in seconds.",
-    "placeholder": "e.g., A task management app with teams, nested tasks, and file attachments...",
-    "cta": "Generate Your App",
-    "secondary": "View Example",
-    "quickTemplates": "Quick templates:",
-    "templateStore": "Store",
-    "templateSaas": "SaaS"
+  "auth": {
+    "createAccountButton": "Create Account",
+    "email": "Email Address",
+    "emailPlaceholder": "name@company.com",
+    "fullName": "Full Name",
+    "fullNamePlaceholder": "John Doe",
+    "google": "Google",
+    "login": "Welcome Back",
+    "orContinueWith": "Or continue with",
+    "password": "Password",
+    "passwordPlaceholder": "••••••••",
+    "register": "Create Account",
+    "signInButton": "Sign In",
+    "switchToLogin": "Already have an account? Login",
+    "switchToSignup": "Need an account? Sign up",
+    "tagline": "The gateway to your next big idea."
   },
-  "howItWorks": {
-    "title": "How It Works",
-    "subtitle": "Four steps to launch. No boilerplate, just production code.",
-    "steps": {
-      "step1": {
-        "title": "Describe your idea",
-        "description": "Use natural language to explain what your app should do."
-      },
-      "step2": {
-        "title": "Review schema visually",
-        "description": "We generate a professional ERD schema for your approval."
-      },
-      "step3": {
-        "title": "Confirm & customize",
-        "description": "Select your preferred tech stack and project settings."
-      },
-      "step4": {
-        "title": "Download code",
-        "description": "Get production-ready source code ready to run locally."
-      }
-    }
+  "cta": {
+    "button": "Get Started Now",
+    "subtitle": "Join thousands of developers using Initia to speed up their development cycle.",
+    "title": "Ready to build something amazing?"
+  },
+  "footer": {
+    "about": "About",
+    "changelog": "Changelog",
+    "company": "Company",
+    "connect": "Connect",
+    "copyright": "© 2024 Initia. All rights reserved.",
+    "description": "The intelligent app engine that transforms your thoughts into production-ready source code.",
+    "features": "Features",
+    "pricing": "Pricing",
+    "privacy": "Privacy Policy",
+    "product": "Product",
+    "tagline": "Built with precision for developers world-wide.",
+    "terms": "Terms of Service"
   },
   "forWhom": {
-    "title": "Built for the next generation of builders.",
     "indieDevelopers": {
-      "title": "Indie Developers",
-      "description": "Skip the setup and focus on shipping features that matter."
+      "description": "Skip the setup and focus on shipping features that matter.",
+      "title": "Indie Developers"
     },
     "startupFounders": {
-      "title": "Startup Founders",
-      "description": "Validate your MVP in hours, not weeks. Real code, no vendor lock-in."
+      "description": "Validate your MVP in hours, not weeks. Real code, no vendor lock-in.",
+      "title": "Startup Founders"
     },
     "students": {
-      "title": "MVP & Student Projects",
-      "description": "Learn best practices by seeing how professional architectures are built."
-    }
+      "description": "Learn best practices by seeing how professional architectures are built.",
+      "title": "MVP & Student Projects"
+    },
+    "title": "Built for the next generation of builders."
+  },
+  "header": {
+    "examples": "Examples",
+    "howItWorks": "How it works",
+    "signIn": "Sign in",
+    "startGenerating": "Start Generating"
+  },
+  "hero": {
+    "badge": "Engine v2.0 is now live",
+    "cta": "Generate Your App",
+    "headline": "From idea to full-stack app — instantly.",
+    "placeholder": "e.g., A task management app with teams, nested tasks, and file attachments...",
+    "quickTemplates": "Quick templates:",
+    "secondary": "View Example",
+    "subtext": "Design your database, pick your stack, and download high-quality source code in seconds.",
+    "templateSaas": "SaaS",
+    "templateStore": "Store"
+  },
+  "howItWorks": {
+    "steps": {
+      "step1": {
+        "description": "Use natural language to explain what your app should do.",
+        "title": "Describe your idea"
+      },
+      "step2": {
+        "description": "We generate a professional ERD schema for your approval.",
+        "title": "Review schema visually"
+      },
+      "step3": {
+        "description": "Select your preferred tech stack and project settings.",
+        "title": "Confirm & customize"
+      },
+      "step4": {
+        "description": "Get production-ready source code ready to run locally.",
+        "title": "Download code"
+      }
+    },
+    "subtitle": "Four steps to launch. No boilerplate, just production code.",
+    "title": "How It Works"
   },
   "privacy": {
     "badge": "Privacy first",
     "description": "We don't store your proprietary ideas. Everything is generated just for you."
   },
-  "cta": {
-    "title": "Ready to build something amazing?",
-    "subtitle": "Join thousands of developers using Initia to speed up their development cycle.",
-    "button": "Get Started Now"
-  },
-  "header": {
-    "howItWorks": "How it works",
-    "examples": "Examples",
-    "signIn": "Sign in",
-    "startGenerating": "Start Generating"
-  },
-  "footer": {
-    "description": "The intelligent app engine that transforms your thoughts into production-ready source code.",
-    "product": "Product",
-    "features": "Features",
-    "pricing": "Pricing",
-    "changelog": "Changelog",
-    "company": "Company",
-    "about": "About",
-    "privacy": "Privacy Policy",
-    "terms": "Terms of Service",
-    "connect": "Connect",
-    "copyright": "© 2024 Initia. All rights reserved.",
-    "tagline": "Built with precision for developers world-wide."
+  "schema": {
+    "primaryKey": "PK",
+    "table": "Table"
   },
   "wizard": {
-    "steps": {
-      "prompt": "Prompt",
-      "schema": "Schema",
-      "project": "Project",
-      "signIn": "Sign In",
-      "finalize": "Finalize"
-    },
-    "description": {
-      "title": "Start with your idea",
-      "subtitle": "Explain your application requirements in detail. We'll derive the database architecture from it.",
-      "placeholder": "What are we building today?"
-    },
-    "schema": {
-      "title": "Review Database Schema",
-      "subtitle": "This is the structure we've derived from your prompt.",
-      "backToEdit": "← Back to edit prompt"
-    },
-    "metadata": {
-      "title": "Project Details",
-      "subtitle": "Fine-tune the output for your development environment.",
-      "projectName": "Project Name",
-      "stack": "Stack",
-      "database": "Database",
-      "language": "Language"
-    },
     "auth": {
-      "title": "Almost there!",
-      "subtitle": "Please sign in to generate and download your custom source code.",
+      "createAccount": "Create an Account",
       "signInGoogle": "Sign In with Google",
-      "createAccount": "Create an Account"
-    },
-    "download": {
-      "title": "Your App is Ready!",
-      "subtitle": "We've generated the source code for",
-      "using": "using",
-      "and": "and",
-      "downloadButton": "Download ZIP",
-      "buildAnother": "Build Another"
-    },
-    "loading": {
-      "title": "Architecting your solution...",
-      "subtitle": "Gemini is mapping out the database relations and structures."
+      "subtitle": "Please sign in to generate and download your custom source code.",
+      "title": "Almost there!"
     },
     "continue": "Continue",
-    "signIn": "Sign In"
-  },
-  "auth": {
-    "login": "Welcome Back",
-    "register": "Create Account",
-    "tagline": "The gateway to your next big idea.",
-    "fullName": "Full Name",
-    "fullNamePlaceholder": "John Doe",
-    "email": "Email Address",
-    "emailPlaceholder": "name@company.com",
-    "password": "Password",
-    "passwordPlaceholder": "••••••••",
-    "signInButton": "Sign In",
-    "createAccountButton": "Create Account",
-    "switchToSignup": "Need an account? Sign up",
-    "switchToLogin": "Already have an account? Login",
-    "orContinueWith": "Or continue with",
-    "google": "Google"
-  },
-  "schema": {
-    "table": "Table",
-    "primaryKey": "PK"
+    "description": {
+      "placeholder": "What are we building today?",
+      "subtitle": "Explain your application requirements in detail. We'll derive the database architecture from it.",
+      "title": "Start with your idea"
+    },
+    "download": {
+      "and": "and",
+      "buildAnother": "Build Another",
+      "downloadButton": "Download ZIP",
+      "subtitle": "We've generated the source code for",
+      "title": "Your App is Ready!",
+      "using": "using"
+    },
+    "loading": {
+      "subtitle": "Gemini is mapping out the database relations and structures.",
+      "title": "Architecting your solution..."
+    },
+    "metadata": {
+      "backend": "Backend Framework",
+      "country": "Country",
+      "database": "Database",
+      "description": "Just let us know what your planning to do.",
+      "frontend": "Frontend Framework",
+      "language": "Language",
+      "projectName": "Project Name",
+      "sector": "Industry / Sector",
+      "subtitle": "Fine-tune the output for your development environment.",
+      "technical": {
+        "subtitle": "Specify additional technical preferences for your project.",
+        "title": "Technical Details"
+      },
+      "title": "Project Details"
+    },
+    "schema": {
+      "backToEdit": "← Back to edit prompt",
+      "subtitle": "This is the structure we've derived from your prompt.",
+      "title": "Review Database Schema"
+    },
+    "signIn": "Sign In",
+    "steps": {
+      "finalize": "Finalize",
+      "project": "Project",
+      "prompt": "Prompt",
+      "schema": "Schema",
+      "signIn": "Sign In"
+    }
   }
 }
