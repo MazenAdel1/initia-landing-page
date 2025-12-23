@@ -9,6 +9,12 @@ export const Header: React.FC = () => {
   const { t } = useTranslation();
   const [isOpen, setIsOpen] = React.useState(false);
 
+  const links = [
+    { href: "/#how-it-works", label: t("footer.howItWorks") },
+    { href: "/#pricing", label: t("footer.pricing") },
+    { href: "/#who-is-it-for", label: t("footer.whoIsItFor") },
+  ];
+
   return (
     <nav className="sticky top-0 z-50 bg-white border-b border-gray-100">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -18,25 +24,18 @@ export const Header: React.FC = () => {
           </Link>
 
           <div className="hidden md:flex space-x-8 items-center">
-            <a
-              href="/#how-it-works"
-              className="text-gray-600 hover:text-[#1E4C9D] font-medium transition-colors"
-            >
-              {t("footer.howItWorks")}
-            </a>
-            <a
-              href="/#pricing"
-              className="text-gray-600 hover:text-[#1E4C9D] font-medium transition-colors"
-            >
-              {t("footer.pricing")}
-            </a>
-            <a
-              href="/#who-is-it-for"
-              className="text-gray-600 hover:text-[#1E4C9D] font-medium transition-colors"
-            >
-              {t("footer.whoIsItFor")}
-            </a>
+            {links.map(({ href, label }, i) => (
+              <a
+                href={href}
+                className="text-gray-600 hover:text-[#1E4C9D] font-medium transition-colors text-center"
+                key={i}
+              >
+                {label}
+              </a>
+            ))}
+
             <LanguageSwitcher />
+
             <a
               href="https://github.com/baseflow-labs"
               target="_blank"
@@ -45,6 +44,7 @@ export const Header: React.FC = () => {
             >
               <Github size={18} />
             </a>
+
             <Link
               to="/generate"
               className="bg-[#3A7DFF] text-white px-5 py-2.5 rounded-lg font-medium hover:bg-blue-600 transition-all shadow-sm active:scale-95"

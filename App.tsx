@@ -113,9 +113,6 @@ const LandingPage = () => {
 
                   <p className="mt-6 text-sm text-white/70">
                     {t("pricing.finePrint")}
-                    <span className="ml-2 text-white/60">
-                      {t("pricing.licenseNote")}
-                    </span>
                   </p>
                 </div>
 
@@ -145,54 +142,80 @@ const LandingPage = () => {
       {/* For Whom Section */}
       <section className="py-24" id="who-is-it-for">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-20 items-center">
-            <div>
-              <h2 className="text-4xl font-black text-[#1E4C9D] mb-8 leading-tight">
-                {t("forWhom.title")}
-              </h2>
-              <div className="space-y-6">
-                <div className="flex gap-4">
-                  <div className="mt-1 flex-shrink-0 w-10 h-10 bg-blue-50 rounded-lg flex items-center justify-center text-blue-600">
-                    <Users size={20} />
-                  </div>
-                  <div>
-                    <h4 className="font-bold text-gray-900 mb-1">
-                      {t("forWhom.indieDevelopers.title")}
-                    </h4>
-                    <p className="text-gray-600 text-sm">
-                      {t("forWhom.indieDevelopers.description")}
-                    </p>
-                  </div>
-                </div>
-                <div className="flex gap-4">
-                  <div className="mt-1 flex-shrink-0 w-10 h-10 bg-purple-50 rounded-lg flex items-center justify-center text-purple-600">
-                    <Zap size={20} />
-                  </div>
-                  <div>
-                    <h4 className="font-bold text-gray-900 mb-1">
-                      {t("forWhom.startupFounders.title")}
-                    </h4>
-                    <p className="text-gray-600 text-sm">
-                      {t("forWhom.startupFounders.description")}
-                    </p>
-                  </div>
-                </div>
-                <div className="flex gap-4">
-                  <div className="mt-1 flex-shrink-0 w-10 h-10 bg-green-50 rounded-lg flex items-center justify-center text-green-600">
-                    <CheckCircle2 size={20} />
-                  </div>
-                  <div>
-                    <h4 className="font-bold text-gray-900 mb-1">
-                      {t("forWhom.students.title")}
-                    </h4>
-                    <p className="text-gray-600 text-sm">
-                      {t("forWhom.students.description")}
-                    </p>
-                  </div>
-                </div>
+          <h2 className="text-4xl font-black text-[#1E4C9D] mb-20 leading-tight text-center">
+            {t("forWhom.title")}
+          </h2>
+
+          <div className="flex space-x-6 mb-20">
+            <div className="flex gap-4">
+              <div className="mt-1 flex-shrink-0 w-10 h-10 bg-purple-50 rounded-lg flex items-center justify-center text-purple-600">
+                <Zap size={20} />
+              </div>
+              <div>
+                <h4 className="font-bold text-gray-900 mb-1">
+                  {t("forWhom.startupFounders.title")}
+                </h4>
+                <p className="text-gray-600 text-sm">
+                  {t("forWhom.startupFounders.description")}
+                </p>
               </div>
             </div>
-            <div className="relative">
+
+            <div className="flex gap-4">
+              <div className="mt-1 flex-shrink-0 w-10 h-10 bg-blue-50 rounded-lg flex items-center justify-center text-blue-600">
+                <Users size={20} />
+              </div>
+
+              <div>
+                <h4 className="font-bold text-gray-900 mb-1">
+                  {t("forWhom.indieDevelopers.title")}
+                </h4>
+                <p className="text-gray-600 text-sm">
+                  {t("forWhom.indieDevelopers.description")}
+                </p>
+              </div>
+            </div>
+
+            <div className="flex gap-4">
+              <div className="mt-1 flex-shrink-0 w-10 h-10 bg-green-50 rounded-lg flex items-center justify-center text-green-600">
+                <CheckCircle2 size={20} />
+              </div>
+
+              <div>
+                <h4 className="font-bold text-gray-900 mb-1">
+                  {t("forWhom.students.title")}
+                </h4>
+                <p className="text-gray-600 text-sm">
+                  {t("forWhom.students.description")}
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-20">
+            <div>
+              <div>
+                <h3 className="text-3xl font-black text-[#1E4C9D] mt-10 mb-8 leading-tight">
+                  {t("features.title")}
+                </h3>
+
+                <ul>
+                  {Array.from({ length: 5 }).map((_, i) => (
+                    <li key={i} className="mb-10 font-bold">
+                      <div className="text-[#1E4C9D] text-lg mb-2">
+                        {t(`features.items.${i}.title`)}
+                      </div>
+
+                      <div className="text-gray-600 text-justify">
+                        <small>{t(`features.items.${i}.description`)}</small>
+                      </div>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+
+            <div className="relative" style={{ direction: "ltr" }}>
               <div className="bg-[#1E4C9D] p-8 rounded-3xl shadow-2xl relative z-10 overflow-hidden text-white">
                 <div className="flex justify-between items-center mb-6">
                   <div className="flex gap-2">
@@ -201,37 +224,42 @@ const LandingPage = () => {
                     <div className="w-3 h-3 rounded-full bg-green-400" />
                   </div>
                   <div className="text-xs font-mono opacity-50">
-                    src/schema.prisma
+                    src/schema.json
                   </div>
                 </div>
                 <pre className="text-sm font-mono leading-relaxed opacity-90 overflow-x-auto">
-                  {`model User {
-  id        String   @id @default(cuid())
-  email     String   @unique
-  name      String?
-  projects  Project[]
-}
-
-model Project {
-  id        String   @id @default(cuid())
-  name      String
-  ownerId   String
-  owner     User     @relation(fields: [ownerId], references: [id])
+                  {`{
+  "tables": {
+    "User": {
+      "email": {
+        "type": "string",
+        "unique": true
+      },
+      "name": {
+        "type": "string",
+        "nullable": true
+      }
+    },
+    "Project": {
+      "name": {
+        "type": "string"
+      },
+      "owner": {
+        "type": "string",
+        "references": "User.id"
+      }
+    }
+  },
+  "relations": [
+    {
+      "from": "User",
+      "to": "Project",
+      "type": "one-to-many", // 1 user can have many projects
+    }
+  ]
 }`}
                 </pre>
                 <div className="absolute -bottom-10 -right-10 w-40 h-40 bg-white/10 rounded-full blur-2xl" />
-              </div>
-              {/* Floating Badge */}
-              <div className="absolute -bottom-6 -left-6 bg-white border border-gray-100 p-6 rounded-2xl shadow-xl z-20 max-w-[200px] animate-bounce-slow">
-                <div className="flex items-center gap-3 mb-2">
-                  <Shield size={20} className="text-[#3A7DFF]" />
-                  <span className="font-black text-sm uppercase tracking-wider">
-                    {t("privacy.badge")}
-                  </span>
-                </div>
-                <p className="text-xs text-gray-500 leading-tight">
-                  {t("privacy.description")}
-                </p>
               </div>
             </div>
           </div>
