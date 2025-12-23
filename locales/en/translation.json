@@ -21,6 +21,33 @@
     "subtitle": "Join thousands of developers using Initia to speed up their development cycle.",
     "title": "Ready to build something amazing?"
   },
+  "features": {
+    "items": [
+      {
+        "description": "Authentication, user profiles, settings, localization, notifications, messaging, email integration, users sessions recording and data collection — all structured and connected from day one.",
+        "title": "Production-ready app foundation"
+      },
+      {
+        "description": "A dedicated admin dashboard for user management, activity tracking, system logs, health monitoring, backups, bulk data insertion, and app branding control.",
+        "title": "Admin panel & system operations"
+      },
+      {
+        "description": "Visually review and edit your database schema and relationships before generating code — so the output matches your real requirements.",
+        "title": "Schema-first, review before generation"
+      },
+      {
+        "description": "Start faster with ready-to-use templates like eCommerce, delivery, ride hailing, booking systems, e-learning, and more.",
+        "title": "Templates for common products"
+      },
+      {
+        "description": "Built using best technologies like React, Vite, Bootstrap, Redux, i18next, NestJS, Docker, Swagger, and more — with upcoming features like mobile apps and landing page generation.",
+        "title": "Modern stack with an expanding roadmap"
+      }
+    ],
+    "roadmapLinkLabel": "View public roadmap",
+    "subtitle": "Initia generates more than CRUD. It gives you a real foundation for a production app.",
+    "title": "Everything you need to start — already built"
+  },
   "footer": {
     "about": "Protection",
     "changelog": "Changelog",
@@ -50,7 +77,7 @@
       "description": "Learn coding best practices by noting the professional architectures we build.",
       "title": "MVP & Student Projects"
     },
-    "title": "Built for the next generation of builders."
+    "title": "Built for the next generation of builders"
   },
   "header": {
     "examples": "Examples",
