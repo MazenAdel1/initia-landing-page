@@ -1,12 +1,14 @@
+import { useRTL } from "@/hooks/useRTL";
+import { AppWindow, ArrowLeft, ArrowRight, Zap } from "lucide-react";
 import React from "react";
-import { useNavigate } from "react-router-dom";
 import { useTranslation } from "react-i18next";
-import { ArrowRight, Play, Zap } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 
 export const Hero: React.FC = () => {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
   const [prompt, setPrompt] = React.useState("");
   const navigate = useNavigate();
+  const isRtl = i18n.dir() === "rtl";
 
   const handleStart = () => {
     if (prompt.trim()) {
@@ -58,19 +60,22 @@ export const Hero: React.FC = () => {
                   </button>
                 </div>
                 <div className="flex gap-4 w-full sm:w-auto">
-                  <button
-                    onClick={() => navigate("/generate")}
+                  <a
+                    href="https://initia-frontend-template.vercel.app/"
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="flex-1 sm:flex-none flex items-center justify-center gap-2 px-6 py-3 bg-white border border-gray-200 text-gray-700 font-bold rounded-xl hover:bg-gray-50 transition-all shadow-sm"
                   >
-                    <Play size={18} fill="currentColor" />
+                    <AppWindow size={18} />
                     {t("hero.secondary")}
-                  </button>
+                  </a>
+
                   <button
                     onClick={handleStart}
                     className="flex-1 sm:flex-none flex items-center justify-center gap-2 px-10 py-3 bg-[#3A7DFF] text-white font-bold rounded-xl hover:bg-blue-600 transition-all shadow-lg hover:shadow-blue-200/50 active:scale-95"
                   >
                     {t("hero.cta")}
-                    <ArrowRight size={18} />
+                    {isRtl ? <ArrowLeft size={24} /> : <ArrowRight size={24} />}
                   </button>
                 </div>
               </div>
